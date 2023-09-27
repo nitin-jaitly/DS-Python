@@ -4,8 +4,8 @@ class LinkedList:
 	def __init__(self):
 		self.head = None
 		
-	def insert_node_at_head(self,node):
-		if self.rhead:
+	def insert_node_at_head(self, node):
+		if self.head:
 			node.next = self.head
 			self.head = node
 		else:
@@ -43,4 +43,17 @@ class LinkedList:
 				result += ", "
 		result += ""
 		return result
-	
+
+
+	# Template to reverse the linked list
+
+	def reverse_linked_list(slow_ptr):
+		prev = None
+		next = None
+		curr = slow_ptr
+		while curr is not None:
+			next = curr.next
+			curr.next = prev
+			prev = curr
+			curr = next
+		return prev
