@@ -18,8 +18,11 @@
 # from GTCI_Python.two_pointers_palindrome import *
 # from linked_list_palindrome import *
 # from GTCI_Python.Sliding_Window.Repeated_DNA_Sequences import *
-from GTCI_Python.Two_Heaps.maximize_capital import *
-
+# from GTCI_Python.Two_Heaps.maximize_capital import *
+# from Top_50_GFG.Arrays.bubble_sort import *
+# from Top_50_GFG.Arrays.kth_smallest import *
+# from Top_50_GFG.Arrays.find_repeating import *
+from Top_50_GFG.Arrays.find_first_non_repeating_element import *
 
 def main() -> object:
     # check_rotation()
@@ -38,7 +41,11 @@ def main() -> object:
     # driver_check_palindrome()
     # check_reversed_list_for_palindrome()
     # driver_repeated_sequences()
-    driver_maximize_capital()
+    # driver_maximize_capital()
+    # driver_bubble_sort()
+    # driver_kth_smallest()
+    # driver_find_repeating()
+    driver_find_first_non_repeating_element()
 
 
 # Press the green button in the gutter to run the script.
