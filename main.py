@@ -11,18 +11,14 @@
 # from get_min_max import *
 # from reverse_list import *
 # from array_sort import *
-# from Arrays.array_occurance_for_element import *
-# from GTCI_Python.two_pointers_find_middle_in_ll import *
+# from Arrays.array occurance import *
+# from GTCI_Python.two_pointers_find_middle_inr_ll import *
 # from GTCI_Python.two_pointers_detect_cycle_in_ll import *
 # from GTCI_Python.two_pointers_circular_array_loop import *
 # from GTCI_Python.two_pointers_palindrome import *
-# from linked_list_palindrome import *
-# from GTCI_Python.Sliding_Window.Repeated_DNA_Sequences import *
-# from GTCI_Python.Two_Heaps.maximize_capital import *
-# from Top_50_GFG.Arrays.bubble_sort import *
-# from Top_50_GFG.Arrays.kth_smallest import *
-# from Top_50_GFG.Arrays.find_repeating import *
-from Top_50_GFG.Arrays.find_first_non_repeating_element import *
+# import NeetCode.Binary_Search.binary_search
+# import NeetCode.Binary_Search.binary_search
+import NeetCode.Arrays.check_palindrome
 
 def main() -> object:
     # check_rotation()
@@ -45,7 +41,18 @@ def main() -> object:
     # driver_bubble_sort()
     # driver_kth_smallest()
     # driver_find_repeating()
-    driver_find_first_non_repeating_element()
+    # driver_find_first_non_repeating_element()
+    # driver_contains_duplicate()
+    # driver_two_sum()
+    # driver_unique()
+    # driver_longest_substring()
+
+    # Hacker Rank
+    # print_first_last_name.driver_print_full_name()
+    # count_substring_in_string.driver_count_substring()
+    # mutate_string.driver_mutate_string()
+    # NeetCode.Binary_Search.binary_search.driver_binary_search()
+    NeetCode.Arrays.check_palindrome.driver_check_palindrome()
 
 
 # Press the green button in the gutter to run the script.
