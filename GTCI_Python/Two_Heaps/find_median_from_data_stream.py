@@ -2,7 +2,6 @@
 from heapq import *
 
 class MedianOfStream:
-
     def __init__(self):
         self.max_heap_for_smallnum = []
         self.min_heap_for_largenum = []
@@ -39,3 +38,6 @@ def driver_find_median():
         print(100*"-"+"\n")
         x += 1
 
+#
+#
+# [1, 1, 1, 1, 2, 3, 4, 2, 1, 2, 3]
