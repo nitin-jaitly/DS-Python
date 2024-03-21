@@ -29,7 +29,7 @@ class Solution:
     def driver_check_palindrome(self):
         string = "“M a    ; _ d    ;;  — A m"
         string = "N I TIN"
-        string = "A man, a plan, a canal: Panama"
+        string = "\"A man, a plan, a canal: Panama\""
         print("The string " + string + " is a Palindrome ? " + str(self.isPalindrome(string)))
 
     def isPalindrome(self, arr):

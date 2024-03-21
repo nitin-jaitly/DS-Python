@@ -24,3 +24,4 @@ def binary_search(nums: list, target) -> int:
             return mid
     return -1
 
+# practices
