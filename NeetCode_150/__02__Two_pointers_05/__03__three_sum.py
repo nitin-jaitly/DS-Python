@@ -1,4 +1,10 @@
+"""
+Given an integer array nums, return all the triplets
+[nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k,
+and nums[i] + nums[j] + nums[k] == 0.
 
+Notice that the solution set must not contain duplicate triplets.
+"""
 class Solution:
     def threeSum(self,nums: list[int]) -> list[list[int]]:
         res = []
@@ -20,6 +26,8 @@ class Solution:
                     l += 1
                     while  nums[l] == nums[l-1] and l < r:
                         l += 1
+                    while  nums[r] == nums[r - 1] and l < r:
+                        r -= 1
         return res
 
 

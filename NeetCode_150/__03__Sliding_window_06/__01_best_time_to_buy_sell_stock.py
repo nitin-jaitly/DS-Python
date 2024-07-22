@@ -1,4 +1,9 @@
 
+"""
+L = [ 7,1,5,3,6,4]
+
+
+"""
 class Solution:
     def maxProfit(self,prices: list[int]) -> int:
 
@@ -23,3 +28,18 @@ class Solution:
 
         prices  = [7,6,4,3,1]
         print(self.maxProfit(prices))
+
+
+def max_profit(prices):
+    l , r = 0, 1
+    maxProfit = 0
+
+    while r < len(prices):
+        if prices[l] < prices[r]:
+            profit = prices[r] - prices[l]
+            maxProfit = max(maxProfit, profit)
+        else:
+            l = r
+
+        r += 1
+

@@ -13,6 +13,89 @@ https://leetcode.com/problems/merge-sorted-array/?envType=study-plan-v2&envId=to
 
 """
 
+"""
+Q2
+
+Example 2: 
+Input : A = [1, 2, 3, 5]
+        B = [6, 7, 8, 9 ]
+        C = [10, 11, 12]
+Output: D = [1, 2, 3, 5, 6, 7, 8, 9. 10, 11, 12]
+
+Given 3 arrays (A, B, C) which are sorted in ascending order, we are required to merge them together in ascending order and output the array D. 
+Example 1: 
+Input : C = [1, 2, 3, 4, 5] 
+        B = [2, 3, 4]
+        A = [4, 5, 6, 7]
+Output : D = [1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 7]
+
+"""
+
+"""
+from Muralikrishna Dudaka to Everyone:    4:31  PM
+- Given an array with 100 numbers
+- array is not sorted
+- 98 unique and 1 duplicate
+- all the numbers are between 1-99
+1 to 99 , 1 
+find the sum of 1 to 99 ..  x  
+ 
+ 1 2 3  2 
+
+SUm of 1 , 2 , 3 = 6 
+Sum of 1 , 2 , 3, 2 = 8 .. 
+
+8 - 6 = 2
+
+find the sum of 1 to 100 indexes  .. y .
+y - x
+
+- Find the duplicate number
+"""
+#
+# @func_decorator
+
+
+
+def rev_string():
+    A = "string"
+    #rev_string = A[::-1]
+    low = 0
+    high = len(str) - 1
+    while (low < high):
+        if  str[low] != str[high]:
+
+            return False
+        low += 1
+        high -= 1
+    uppercase = str.upper()
+    #streamlet
+
+    return True
+
+def merge_sorted_arrays( A, B, C):
+    l1 = len(A)
+    l2 = len(B)
+    l3 = len(C)
+    i, j , k = 0, 0, 0
+
+    result = []
+    while i < l1 or  j < l2  or  k < l3:
+        if A[i] < B[j] and A[i] < C[j]:
+            result.append(A[i])
+        elif B[j] < A[i] and B[j] < C[k]:
+            result.append(B[j])
+        elif C[k] < A[i] and C[k] < B[j]:
+            result.append(B[k])
+
+        i += 1
+        j += 1
+        k += 1
+
+    return result
+
+
+
 from typing import List
 
 def merge_sorted_arr(nums1: List[int], nums2: List[int]) -> List[int]:

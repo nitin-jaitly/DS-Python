@@ -53,13 +53,29 @@ class Solution:
 
         return seen
 
+    def remove_dup_until(self, nums: List[int]) -> int:
+        for i in range(len(nums)-3):
+            for j in range(i, len(nums)-2):
+                print("nums = " + str(nums), "nums[i] = " + str(nums[i]), "nums[j] = " + str(nums[j]),
+                      "i = " + str(i), "j = " + str(j))
+
+                if nums[i] == nums[j]:
+                    nums.remove(nums[i])
+
+        # print("nums = " + str(nums), "nums[i] = " + str(nums[i]), "nums[j] = " + str(nums[j]),
+        #       "i = " + str(i), "j = " + str(j))
+
+        return len(nums)
+
     def driver_removeDuplicates(self):
-        nums = [0,1,2,3,3,4,4,5,5]
+        nums = [0,1,2,3,3,4,4,5,5,6,6,6,6,7,7,8,9,10]
         print(nums)
-        print(self.removeDuplicates_4(nums))
+        # print(self.removeDuplicates_4(nums))
+        #
+        # print(self.removeDuplicates_3(nums))
+        #
+        # print(self.removeDuplicates_2(nums))
+        #
+        # print(self.removeDuplicates(nums))
 
-        print(self.removeDuplicates_3(nums))
-
-        print(self.removeDuplicates_2(nums))
-
-        print(self.removeDuplicates(nums))
+        print(self.remove_dup_until(nums))
