@@ -4,10 +4,3 @@ class TreeNode:
         self.left = left
         self.right = right
 
-
-def main():
-
-
-if __name__ == "__main__":
-    main()
-
