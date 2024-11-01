@@ -27,3 +27,10 @@ class Solution:
             print("PASS")
         else:
             print("FAIL")
+
+def main():
+    sol = Solution()
+    sol.driver_encode_decode()
+
+if __name__ == "__main__":
+    main()

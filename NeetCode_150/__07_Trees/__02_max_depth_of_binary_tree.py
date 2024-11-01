@@ -28,7 +28,6 @@ class Solution:
 
         return level
 
-
     def max_depth_iterative_dfs(self, root:TreeNode):
         stack = [root, 1]
         res = 0

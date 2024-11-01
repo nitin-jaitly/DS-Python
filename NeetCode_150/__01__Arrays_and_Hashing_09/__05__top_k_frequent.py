@@ -16,11 +16,14 @@ class Solution:
                 if len(res) == k:
                     return count, freq, res
 
-
     def driver_top_k_frequent(self):
         nums = [1,1,1,1,3,4,5,6,5,5,2,6]
         k = 3
         print(self.top_k_frequent(nums, k))
 
+def main():
+    sol = Solution()
+    sol.driver_top_k_frequent()
 
-
+if __name__ == "__main__":
+    main()

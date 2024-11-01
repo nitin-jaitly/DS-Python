@@ -8,10 +8,7 @@ def get_ordered_token_counts(queries=None):
     seen = {}
 
     for query in queries:
-        lower_case_query = query.lower()
-        lower_case_query = lower_case_query.strip()
-
-        words_in_lower = lower_case_query.split(' ')
+        words_in_lower = query.lower().strip().split(' ')
 
         for word in words_in_lower:
             if word not in seen:

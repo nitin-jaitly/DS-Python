@@ -10,7 +10,7 @@ def driver_binary_search():
 def binary_search(nums: list, target) -> int:
     n = len(nums)
     left = 0
-    right =  n - 1
+    right = n - 1
     mid = 0
 
     while left <= right:

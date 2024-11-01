@@ -1,135 +1,98 @@
 
 """
-L = [3,0,0,2,0,4]
+num = 0
 
-L has a coulum count .
+val = 1
 
-0  0  0  0  0  1
-1  0  0  0  0  1
-1  0  0  1  0  1
-1  0  0  1  0  1
+num + val / 2
+
+num + val / 3
+
+Given a series of integer values, implement a RunningAverage class to calculate the running average of the values added.
+The class should support adding new values and retrieving the current running average.
+You may assume that the class will be used in a multi-threaded environment, and you need to ensure thread safety.
+Example 1:
+ra = RunningAverage()
+ra.add(1)
+ra.add(2)
+ra.add(3)
+print(ra.get_average())  # Output: 2.0
+Output: 2.0
+Explanation: The running average after adding 1, 2, and 3 is (1 + 2 + 3) / 3 = 2.0.
+Example 2:
+ra = RunningAverage()
+ra.add(5)
+ra.add(10)
+print(ra.get_average())  # Output: 7.5
+ra.add(15)
+print(ra.get_average())  # Output: 10.0
+Output: 7.5, 10.0
+Explanation: The running average after adding 5 and 10 is (5 + 10) / 2 = 7.5. After adding 15, it is (5 + 10 + 15) / 3 = 10.0.
+Example 3:
+ra = RunningAverage()
+print(ra.get_average())  # Output: 0.0
+Output: 0.0
+Explanation: The initial running average is 0.0 before any values are added.
+Constraints:
+The add method should be thread-safe.
+The get_average method should return a float representing the running average.
+The class should handle a large number of additions efficiently.
+Instructions:
+Implement the RunningAverage class according to the specifications.
+Ensure thread safety in a multi-threaded environment.
+Optimize the class to handle a large number of additions efficiently.
+has context menu
 
 
+has context menu
 """
+import threading
 
+class runningAverage:
 
+    def __init__(self):
+        self.count = 0
+        self.avg = 0
+        self.lock = threading.Lock()
 
-class Solution:
-    def water_bound(self,L : list[int]) -> int:
-        find_level = min(L[0], L[-1])
-        # expected = 3
+    def add(self, new_val):
+        with self.lock:
+            self.count += 1
+            self.avg = self.avg +  ( new_val - self.avg) / self.count
+            print("avg ", self.avg)
 
-        sum = 0
-        for value in L:
-            if value == 0:
-                sum = sum + find_level
+    def get_average(self):
+        with self.lock:
+            return self.avg
 
-            if value < find_level and value != 0:
-               sum = sum + ( find_level - value)
+def main():
+    print("---------------")
+    print("EXAMPLE 1")
+    ra = runningAverage()
+    ra.add(1)
+    print(ra.get_average())
+    ra.add(2)
+    print(ra.get_average())
+    ra.add(3)
+    ra.get_average()
 
-        return sum
+    ##
+    print("---------------")
+    print("EXAMPLE 2")
+    ra_ex2 = runningAverage()
+    ra_ex2.add(5)
+    ra_ex2.get_average()
+    ra_ex2.add(10)
+    ra.get_average()
+    ra_ex2.add(15)
+    ra.get_average()
+    print(ra.get_average())
 
-    def driver_water_bound(self):
-        L = [3, 0, 0, 2, 0, 4]
+    print("---------------")
+    print("EXAMPLE 3")
+    ra_ex3 = runningAverage()
+    ra_ex3.add(0)
+    ra_ex3.get_average()
 
-        L = [3, 0, 0, 2, 0, 0, 10 , 20 , 0, 4, 1 , 0  , 0]
-
-        left, right = 3, 0 #min
-
-
-        print(self.water_bound(L))
-
-#
-# /Approach 2 .
-# L = [3,0,0,2,0,4]
-#
-# if 0 then add 3
-# if 0 then add 3
-# if 0 then add 3 .
-#
-# 3 -2  = 1 , add 1 .
-#
-# Sum = 10
-#
-# Y               0  0  0  0  0  1  -> Level 4
-# |               1  0  0  0  0  1  -> Level 3          .. Level 3 , Min ( 3, 4 ) = 3
-# |               1  0  0  1  0  1  -> Level 2
-# |____> X axis   1  0  0  1  0  1  -> Level 1
-# i , j  i is x coor , j is y cord
-#
-#
-# 1st Requirement , is to make sure that the water is within boundary.
-# water_matrix[i , 0] and water_matrix[i, 5]
-#
-# Figure out till what level water can be filled up , In our case I has to be 0 , and 1 , and 2 .
-#
-# Then iternatte through 0, 0 to  2 , 5 check for 0  ,and increase count.
-#
-# Output = 10
-#
-#
-# def
-#
-
-## Create a excel columns
-#
-# A   B   C  D .... Z
-# AA  AB  AC        AZ
-# ........................ZZ
-#
-# Length = 2
-#
-# A to ZZ
-#
-# Length = 3
-# A to ZZZ
-#
-# list_of_chars = ['A', 'B', 'C', 'D' , .... 'Z']
-
-def gen_length(input_length):
-
-    solution = []
-
-    initial_len = 1
-    # while initial_len <= input_length:
-    #     # for char in list_of_chars:
-    #     #     solution.append(char)
-    #     append_char()
-    #
-    #     for char in list_of_chars:
-    #         for char2 in list_of_chars:
-    #             solution.append(char, char2)
-    #
-    #     for char in list_of_chars:
-    #         for char2 in list_of_chars:
-    #             for char3 in list_of_chars:
-    #                 solution.append(char, char2, char3)
-    #
-    # A B C
-    #
-    # A B C .
-    #
-    # AA AB AC
-    #
-    # BA BB BC
-    #
-    # CA CB CC
-    #
-
-    while initial_length < input_length:
-        # for char in list_of_chars:
-        #     solution.append(char)
-        #
-        solution = []
-        for char in list_of_chars:
-            for char2 in solution:
-                result = str(char) + str(char2)
-
-                solution.append(result)
-
-
-
-
-
-
-
+if __name__ == "__main__":
+    main()

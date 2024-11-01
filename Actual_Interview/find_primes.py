@@ -27,7 +27,10 @@ class Solution:
 
 
 
+def main():
+    sol = Solution()
+    sol.driver_find_primes()
 
-
-
+if __name__ == "__main__":
+    main()
 

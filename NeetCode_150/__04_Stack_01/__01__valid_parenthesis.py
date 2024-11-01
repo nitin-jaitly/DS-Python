@@ -21,11 +21,14 @@ class Solution:
         s = "()"
         if self.isValid(s):
             print("PASS")
-
+        else:
+            print("FAIL")
 
         s = "()[]{}"
         if self.isValid(s):
             print("PASS")
+        else:
+            print("FAIL")
 
         s = "(]"
         if self.isValid(s):
