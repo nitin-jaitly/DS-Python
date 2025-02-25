@@ -23,11 +23,6 @@ class Solution:
         print(arr)
         for num in arr:
             my_hash[num] = 1 + my_hash.get(num, 0)
-        #
-        # print("Items in hash")
-        # for k,v in my_hash.items():
-        #     print("key = ",k ," value = ", v)
-
         dups_found = False
         for k, v in my_hash.items():
             if v > 1:

@@ -41,18 +41,22 @@ class Solution:
             prevMap[v] = i
 
     def driver_two_sum(self):
-        A = [2, 4, 5, 6, 7, 9, 11]
-        target = 12
-        print("Indices for two sum = ", self.two_sum(A, target))
 
-        nums = [3, 2, 4]
-        target = 6
-        print("Indices for two sum = ", self.two_sum(nums,target))
+        nums_list = [
+            [2, 4, 5, 6, 7, 9, 11],
+            [3, 2, 4],
+            [2, 7, 11, 15],
+            [3, 3]
+        ]
 
-        nums = [2, 7, 11, 15]
-        target = 9
-        print("Indices for two sum = ", self.two_sum(nums, target))
+        target_list = [12, 6, 9, 6 ]
 
-        nums = [3, 3]
-        target = 6
-        print("Indices for two sum = ", self.two_sum(nums, target))
+        for i in range(len(nums_list)):
+            print(f"\n\nindex i = {i}")
+            print(f"nums_list of {i} index = {nums_list[i]}")
+            print(f"target = {target_list[i]}")
+            print("Indices for two sum = ", self.two_sum(nums_list[i], target_list[i]))
+
+if __name__ == "__main__":
+    sol = Solution()
+    sol.driver_two_sum()

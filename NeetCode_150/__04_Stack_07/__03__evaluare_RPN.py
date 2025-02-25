@@ -24,6 +24,7 @@ class Solution:
     def evalRPN(self, tokens: list[str]) -> int:
         stack = []
         for c in tokens:
+            print(stack, c)
             if c == "+" :
                 stack.append(stack.pop() + stack.pop())
             elif c == "-":
@@ -37,7 +38,9 @@ class Solution:
             else:
                 stack.append(int(c))
 
-        return stack.pop()
+        #return stack.pop()
+        #return stack[0]
+        return stack[-1]
 
 def main():
     s = Solution()

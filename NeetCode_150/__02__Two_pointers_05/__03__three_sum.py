@@ -11,6 +11,7 @@ class Solution:
         nums.sort()
 
         for i, element in enumerate(nums):
+            ## Skip Duplicates
             if i > 0 and element == nums[i - 1]:
                 continue
 
@@ -24,6 +25,7 @@ class Solution:
                 else:
                     res.append([element, nums[l], nums[r]])
                     l += 1
+                    ## Skip Duplicates
                     while  nums[l] == nums[l-1] and l < r:
                         l += 1
                     while  nums[r] == nums[r - 1] and l < r:

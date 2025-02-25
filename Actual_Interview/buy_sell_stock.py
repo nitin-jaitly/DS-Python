@@ -18,7 +18,6 @@ Explanation: In this case, no transactions are done and the max profit = 0.
 
 class Solution:
     def buy_sell_stock(self, prices):
-        left , right = 0, 0
 
         max_profit = 0
         for i in range(len(prices)):
@@ -33,6 +32,7 @@ def main():
     sol = Solution()
     print(sol.buy_sell_stock(prices))
 
+    print(f"\n\nNow Asserting \n ")
     assert 5 == sol.buy_sell_stock(prices)
     prices = [7, 6, 4, 3, 1]
 

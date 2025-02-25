@@ -14,8 +14,8 @@ class Solution:
         print(stack)
         reversed_words = []
         while stack:
-            reversed_words.append(stack.pop())
-            print(reversed_words)
+             reversed_words.append(stack.pop())
+             print(reversed_words)
 
         reversed_sentence = ' '.join(reversed_words)
         return reversed_sentence
@@ -23,3 +23,11 @@ class Solution:
     def driver_rev_words(self):
         A = "Today is a Great day"
         print(self.rev_words(A))
+
+def main():
+    sol = Solution()
+    sol.driver_rev_words()
+
+
+if __name__ == "__main__":
+    main()

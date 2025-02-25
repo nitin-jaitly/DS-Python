@@ -22,7 +22,6 @@ class Solution:
     def driver_anagrams(self):
         strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
         print(self.group_analgrams(strs, len(strs)))
-        #
         # strs = [""]
         # print(group_analgrams(strs, len(strs)))
         #

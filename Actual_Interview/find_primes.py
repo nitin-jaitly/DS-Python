@@ -15,7 +15,7 @@ and Not divisible by any number between 1 and 7
 class Solution:
     def driver_find_primes(self):
         A = 30
-        for number in range(2,A+1):
+        for number in range(1,A+1):
             if self.check_prime(number):
                     print(number, end=" ")
 
@@ -24,8 +24,6 @@ class Solution:
             if (number % i == 0) and (number != i) and (number != 1):
                 return False
         return True
-
-
 
 def main():
     sol = Solution()

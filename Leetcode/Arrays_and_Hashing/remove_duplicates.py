@@ -46,11 +46,9 @@ class Solution:
 
     def removeDuplicates_4(self, nums: List[int]) -> int:
         seen = []
-
         for num in nums:
             if num not in seen:
                 seen.append(num)
-
         return seen
 
     def remove_dup_until(self, nums: List[int]) -> int:
@@ -58,7 +56,6 @@ class Solution:
             for j in range(i, len(nums)-2):
                 print("nums = " + str(nums), "nums[i] = " + str(nums[i]), "nums[j] = " + str(nums[j]),
                       "i = " + str(i), "j = " + str(j))
-
                 if nums[i] == nums[j]:
                     nums.remove(nums[i])
 

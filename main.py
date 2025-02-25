@@ -32,7 +32,7 @@ import NeetCode_150.__03__Sliding_window_06.__03_longest_repeating_char_replacem
 import NeetCode_150.__03__Sliding_window_06.__05__minimum_window_substring
 import NeetCode_150.__03__Sliding_window_06.__06__sliding_window
 
-import NeetCode_150.__04_Stack_01.__01__valid_parenthesis
+import NeetCode_150.__04_Stack_07.__01__valid_parenthesis
 
 import NeetCode_150.__07_Trees.__11_valid_BST
 import NeetCode_150.__07_Trees.__06_subTree
@@ -154,7 +154,7 @@ def main() -> object:
     # Sol = NeetCode_150.__03__Sliding_window_06.__04__minimum_window_substring.Solution()
     # Sol.driver_minWindow()
 
-    # Sol = NeetCode_150.__04_Stack_01.valid_parenthesis.Solution()
+    # Sol = NeetCode_150.__04_Stack_07.valid_parenthesis.Solution()
     # Sol.driver_valid_parenthesis()
 
     # Sol = NeetCode_150.__03__Sliding_window_06.__06__sliding_window.Solution()
