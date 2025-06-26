@@ -52,6 +52,7 @@ def main():
     # assert check_array_for_sum2(nums, k) == False
     # #
     A = [1, 2, 4]
+
     print(check_array_for_sum2(nums, k))
     assert check_array_for_sum2(nums, k) == True
 

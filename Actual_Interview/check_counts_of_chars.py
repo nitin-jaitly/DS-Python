@@ -1,5 +1,6 @@
 """
-A string is said to be beautiful if each letter in the string appears at most as many times as the previous letter in the alphabet within the string; ie: b occurs no more times than a; c occurs no more times than b; etc. Note that letter a has no previous letter.
+A string is said to be beautiful if each letter in the string appears at most as many times as the previous letter in the alphabet within the string; ie:
+ b occurs no more times than a; c occurs no more times than b; etc. Note that letter a has no previous letter.
 
 Given a string, check whether it is beautiful.
 
@@ -27,19 +28,25 @@ Input/Output
 
 A string of lowercase English letters.
 """
-def solution(inputString):
-    counts = [0] * 26
+class Solution:
+    def solution(self,inputString):
+        counts = [0] * 26
 
+        ## Count occurance of each letter
+        for char in inputString:
+            counts[ord(char) - ord('a')] += 1
 
-    ## Count occurance of each letter
-    for char in inputString:
-        counts[ord(char) - ord('a')] += 1
+        # Check if each letters count is at most the count of the previous letter
+        for i in range(1,26):
+            if counts[i] > counts[i -1]:
+                return False
 
+        return True
 
-    # Check if each letters count is at most the count of the previous letter
-    for i in range(1,26):
-        if counts[i] > counts[i -1]:
-            return False
+def main():
+    input_string = "bbbaacdafe"
+    sol = Solution()
+    print(sol.solution(input_string))
 
-    return True
-
+if __name__ == "__main__":
+    main()

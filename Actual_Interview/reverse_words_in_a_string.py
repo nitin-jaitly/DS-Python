@@ -11,13 +11,13 @@ class Solution:
         for word in A.split():
             print(word)
             stack.append(word)
-        print(stack)
+        print(f"Stack = {stack}")
         reversed_words = []
         while stack:
-             reversed_words.append(stack.pop())
-             print(reversed_words)
+              reversed_words.append(stack.pop())
+        print(reversed_words)
 
-        reversed_sentence = ' '.join(reversed_words)
+        reversed_sentence = '  '.join(reversed_words)
         return reversed_sentence
 
     def driver_rev_words(self):

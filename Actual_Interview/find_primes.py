@@ -13,8 +13,7 @@ and Not divisible by any number between 1 and 7
 """
 #
 class Solution:
-    def driver_find_primes(self):
-        A = 30
+    def driver_find_primes(self, A):
         for number in range(1,A+1):
             if self.check_prime(number):
                     print(number, end=" ")
@@ -26,8 +25,9 @@ class Solution:
         return True
 
 def main():
+    A = 1000
     sol = Solution()
-    sol.driver_find_primes()
+    sol.driver_find_primes(A)
 
 if __name__ == "__main__":
     main()

@@ -52,10 +52,7 @@ y - x
 
 - Find the duplicate number
 """
-#
-# @func_decorator
-
-
+from typing import List
 
 def rev_string():
     A = "string"
@@ -96,31 +93,40 @@ def merge_sorted_arrays( A, B, C):
 
 
 
-from typing import List
 
-def merge_sorted_arr(nums1: List[int], nums2: List[int]) -> List[int]:
-    n = len(nums1)
-    m = len(nums2)
-    nums3 = List[int]
+def merge_sorted_arr(nums1: List[int], nums2: List[int]) -> None:
+    m = len(nums1)
+    n = len(nums2)
 
-    i = n - 1
-    j = m - 1
-    k = n + m - 1
+    i = m -1
+    j = n - 1
+    k = m + n - 1
 
     while i >= 0 and j >=0 :
         if nums1[i] > nums2[j]:
-            nums3[k] = nums1[i]
+            nums1[k] = nums1[i]
             i -= 1
         else:
-            nums3[k] = nums2[j]
+            nums1[k] = nums2[j]
             j -= 1
-
         k -= 1
-
 
     while j>= 0:
         nums1[k] = nums2[j]
         j -= 1
         k -= 1
 
+def main():
 
+    A = [4, 5, 6, 7, 0, 0, 0]
+    B = [2, 3, 4]
+    print("Before")
+    print(A)
+    print(B)
+    merge_sorted_arr(A,B)
+    print("After ")
+    print(A)
+    print(B)
+
+if __name__ == "__main__":
+    main()
